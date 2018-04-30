@@ -1,0 +1,25 @@
+START:
+0
+
+FINAL:
+5
+
+EDGES:
+0  'kvart' 1
+1   DET   3	
+0    KS1  1
+0    KS   5
+0  'halv' 4 
+0    KS1  2 
+2   DET   6
+6  'halv' 3
+3    KS   5
+4    KS   5
+
+
+
+ABRS:
+DET: 'over', 'på'
+KS: 'en', 'to', 'tre', 'fire', 'fem', 'seks', 'syv', 'åtte', 'ni', 'ti', 'elleve', 'tolv'
+KS1: 'en', 'to', 'tre', 'fire', 'fem', 'seks', 'syv', 'åtte', 'ni','ti', 'elleve', 'tolv', 'tretten', 'fjorten'
+

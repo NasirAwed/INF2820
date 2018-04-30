@@ -1,0 +1,23 @@
+
++    Kari smilte
++    Kari likte et dyr
++    Kari ga et snilt stort barn et stort dyr
++    Ola fortalte et barn at Kari sa at ethvert dyr sov
++    dyret med barnet sov i huset
++    Kari ga barnet i huset dyret ved vannet
++    Kari sov i huset ved vannet med dyret
++    Kari fortalte at dyret i huset ved vannet sov bak huset
+
+
+-    Kari
+-    smilte
+-    Kari likte
+-    Kari smilte et dyr
+-    Kari sa barnet at dyret sov
+-    Kari ga i huset
+-    huset ved sov
+-    smilte et dyr
+
+
+
+            

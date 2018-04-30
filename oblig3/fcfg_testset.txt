@@ -1,0 +1,49 @@
+
++    Kari smiler
++    Kari likte et dyr
++    Kari gir et snilt stort barn et stort dyr
++    Ola fortalte et barn at Kari sa at ethvert dyr sov
++    dyret med barnet sover i huset
++    Kari ga barnet i huset dyret ved vannet
++    Kari sover i huset ved vannet med dyret
++    Kari fortalte at dyret i huset ved vannet sov bak huset
++    ei jente smilte
++    jenta kjørte en bil
++    en stor gutt smilte
++    den store sterke jenta smiler
++    et hus er stort
++    bilen er stor
++    jenta er stor
++    mange hus er store
++    hun så ham
++    han så henne
+
+
+
+-    Kari
+-    smilte
+-    Kari likte
+-    Kari smilte et dyr
+-    huset ved sov
+-    smilte et dyr
+-    Kari likte et huset
+-    en dyr bet et uhyret
+-    et dyrene sov
+-    et stor dyr sov
+-    barnet forteller
+-    ei barn sov
+-    det jenta smilte
+-    den jente smilte
+-    huset er store
+-    bilen er stort
+-    et hus er stor    
+-    han tok bilen fra hun
+-    henne liker henne
+-    hun liker hun
+
+
+
+
+
+
+            

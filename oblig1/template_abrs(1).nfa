@@ -1,0 +1,25 @@
+START:
+0
+
+FINAL:
+3, 4,
+6
+
+EDGES:
+0 'John'  1
+0 'Mary'  1
+0  DET    2
+2  N      1
+1 'saw'   3
+1 'likes' 3
+3 'Mary'  4
+3 'John'  4
+3  DET    5
+5  N      6 
+
+
+ABRS:
+DET: 'a', 'the'
+N: 'cake', 'hamburger', 'chicken',
+'bull', 'table'
+V: 'likes', 'smiles'

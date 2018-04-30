@@ -1,0 +1,79 @@
+S -> NP[AGR=?x, KJ=?y, KASUS=subj] VP[AGR=?x, KJ=?y, KASUS=OBJ]
+
+NP[AGR=?x, KJ=?y, KASUS=?j] -> N[AGR=?x, KJ=?y, KASUS=?j] | Det[AGR=?x, KJ=?y] N[AGR=?x, KJ=?y] | Det[AGR=?x, KJ=?y] A[AGR=?x, KJ=?y] N[AGR=?x, KJ=?y]
+
+VP[AGR=?x, KJ=?y] -> V[SUBCAT=intrans] | V[SUBCAT=trans] NP[KASUS=obj] | V[SUBCAT=ditrans] NP[KASUS=obj] NP[KASUS=obj] | V[SUBCAT=transcomp] CP | V[SUBCAT=ditranscomp] NP[KASUS=obj] CP | 'er' A[AGR=pred, KJ=?y]
+
+CP -> C S
+PP -> P NP
+NP -> NP PP
+VP -> VP PP
+
+# verb!
+
+V[SUBCAT=intrans] -> 'sov' | 'smilte'
+V[SUBCAT=trans] -> 'solgte' | 'likte'
+V[SUBCAT=ditrans] ->'ga' | 'overrakte'
+V[SUBCAT=transcomp] -> 'fortalte' | 'sa'
+V[SUBCAT=ditranscomp] -> 'fortalte'
+
+# substantiv
+
+N[AGR=egen] -> 'Ola' | 'Kari'
+N[AGR=best, KJ=noy] -> 'dyret' | 'barnet' | 'vannet' | 'huset'
+N[AGR=ubest, KJ=noy] -> 'barn' | 'dyr' | 'hus'
+
+N[AGR=best, KJ=mask] -> 'bilen' | 'hunden' | 'gutten' | 'kontrakten'
+N[AGR=ubest, KJ=mask] -> 'bil' |  'hund' | 'gutt'| 'kontrakt'
+
+N[AGR=best, KJ=fem] -> 'jenta' | 'hytta' | 'anda' | 'gås'
+N[AGR=ubest, KJ=fem] -> 'jente' | 'hytte' | 'and' | 'gås'
+
+N[AGR=ubest, KJ=fler] -> 'dyr' | 'barn' | 'vann' | 'hus' | 'biler' | 'hunder' | 'gutter' | 'kontrakter' | 'jenter' | 'hytter' | 'ender' | 'gjess'
+N[AGR=best, KJ=fler] -> 'dyrene' | 'barna' | 'vannene' | 'husene' | 'bilene' | 'hundene' | 'guttene' | 'kontraktene' | 'jentene' | 'hyttene' | 'endene' | 'gjessene'
+
+# Determinativ
+
+Det[AGR=ubest, KJ=noy] -> 'et' | 'ethvert'
+Det[AGR=best, KJ=noy] -> 'det' | 'dette'
+
+Det[AGR=ubest, KJ=mask]   -> 'en' | 'enhver'
+Det[AGR=best, KJ=mask] -> 'den' | 'denne'
+
+Det[AGR=ubest, KJ=fem]   -> 'ei' | 'enhver'
+Det[AGR=best, KJ=fem] -> 'den' | 'denne'
+
+Det[AGR=ubest, KJ=fler]   -> 'mange' | 'noen' | 'ingen'
+Det[AGR=best, KJ=fler] -> 'alle' | 'de' | 'disse'
+
+
+
+N[PERS=1, KASUS=subj] -> 'jeg' | 'vi'
+N[PERS=1, KASUS=obj] -> 'meg' | 'oss'
+
+N[PERS=2, KASUS=subj] -> 'du' | 'dere'
+N[PERS=2, KASUS=obj] -> 'deg' | 'dere'
+
+N[PERS=3, KASUS=subj] -> 'han' | 'hun' | 'den' | 'det' | 'de'
+N[PERS=3, KASUS=obj] -> 'han' | 'ham' | 'henne' | 'den' | 'det' |  'dem'
+
+
+# adjektiv
+
+A[AGR=best] -> ADJ1
+A[AGR=ubest, KJ=fler] -> ADJ1
+A[AGR=pred, KJ=fler] -> ADJ1
+
+A[AGR=ubest, KJ=noy] -> ADJ2
+A[AGR=ubest, KJ=fem] -> ADJ3
+
+A[AGR=pred, KJ=noy] -> ADJ2
+
+A[AGR=pred] -> ADJ3
+
+ADJ1 -> 'store' | 'snille' | 'dumme' | 'stusselige' | 'sterke' | 'pene' | 'døde'
+ADJ2 -> 'stort' | 'snilt' | 'sterkt' | 'pent' | 'dumt' | 'dødt' | 'stusseligt' | 'lite'
+ADJ3 -> 'stor' | 'snill' | 'sterk' | 'pen' | 'dum' | 'død' | 'stusselig' | 'liten'
+
+C      -> 'at'
+P -> 'med' | 'ved' | 'bak' | 'i'

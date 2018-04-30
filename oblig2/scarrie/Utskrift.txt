@@ -1,0 +1,91 @@
+_------------------------------_
+
+Correctly recognized:
+Kari smilte
+Kari likte et dyr
+Ola fortalte et barn at Kari sa at ethvert dyr sov
+dyret med barnet sov i huset
+Kari ga barnet i huset dyret ved vannet
+Kari sov i huset ved vannet med dyret
+Kari fortalte at dyret i huset ved vannet sov bak huset
+
+Should have been recognized, but wasn't:
+Kari ga et snilt stort barn et stort dyr
+
+Correctly not recognized:
+Kari
+smilte
+Kari likte
+Kari smilte et dyr
+Kari sa barnet at dyret sov
+Kari ga i huset
+huset ved sov
+smilte et dyr
+
+Should not have been recognized, but was:
+------------dyret i huset ved vannet sov----------------
+(S
+  (NP
+    (NP (NP (SUBBEST dyret)) (PP i) (NP (SUBBEST huset)))
+    (PP ved)
+    (NP (SUBBEST vannet)))
+  (VP (VPIT (INTRANS sov))))
+(S
+  (NP
+    (NP (SUBBEST dyret))
+    (PP i)
+    (NP (NP (SUBBEST huset)) (PP ved) (NP (SUBBEST vannet))))
+  (VP (VPIT (INTRANS sov))))
+---------------- Kari sov i huset ved vannet ----------------
+(S
+  (NP (EGENNAVN Kari))
+  (VP
+    (VPITK
+      (DITRANSKOMP fortalte)
+      (NP (SUBBEST barnet))
+      (SUBJ at)
+      (S (NP (SUBBEST dyret)) (VP (VPIT (INTRANS smilte)))))))
+---------------- Kari likte huset ved vannet ----------------
+(S
+  (NP (EGENNAVN Kari))
+  (VP (VPT (TRANS likte) (NP (SUBBEST huset))))
+  (PP ved)
+  (NP (SUBBEST vannet)))
+(S
+  (NP (EGENNAVN Kari))
+  (VP
+    (VPT
+      (TRANS likte)
+      (NP (NP (SUBBEST huset)) (PP ved) (NP (SUBBEST vannet))))))
+---------------- Kari likte dyret i huset ved vannet ----------------
+(S
+  (NP (EGENNAVN Kari))
+  (VP
+    (VPT
+      (TRANS likte)
+      (NP (NP (SUBBEST dyret)) (PP i) (NP (SUBBEST huset)))))
+  (PP ved)
+  (NP (SUBBEST vannet)))
+(S
+  (NP (EGENNAVN Kari))
+  (VP (VPT (TRANS likte) (NP (SUBBEST dyret))))
+  (PP i)
+  (NP (NP (SUBBEST huset)) (PP ved) (NP (SUBBEST vannet))))
+(S
+  (NP (EGENNAVN Kari))
+  (VP
+    (VPT
+      (TRANS likte)
+      (NP
+        (NP (NP (SUBBEST dyret)) (PP i) (NP (SUBBEST huset)))
+        (PP ved)
+        (NP (SUBBEST vannet))))))
+(S
+  (NP (EGENNAVN Kari))
+  (VP
+    (VPT
+      (TRANS likte)
+      (NP
+        (NP (SUBBEST dyret))
+        (PP i)
+        (NP (NP (SUBBEST huset)) (PP ved) (NP (SUBBEST vannet)))))))

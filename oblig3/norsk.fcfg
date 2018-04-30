@@ -1,0 +1,66 @@
+S -> NP[AGR=?x] VP[AGR=?x]
+NP[AGR=?x] -> DET[AGR=?x] Nom[AGR=?x]
+NP[AGR=?x] -> N[AGR=?x] 
+
+VP[AGR=?n] -> V[SUBCAT='transitive', AGR=?n] NP[AGR=?x] | V[SUBCAT='ditransitive', AGR=?n] NP[AGR=?x] NP[AGR=?x] | V[SUBCAT='ditransitive', AGR=?n] CP | V[SUBCAT='ditransitive', AGR=?n] NP[AGR=?x] CP
+VP[AGR=?n] -> Nom[AGR=?x] V[SUBCAT='intransitiv', AGR=?n]
+
+Nom[AGR=?x] -> ADJ[AGR=?x] N[AGR=?x]
+Nom[AGR=?x] -> N[AGR=?x]
+ 
+ 
+CP -> C S
+PP -> P NP[AGR=?x]
+NP[AGR=?x] -> NP[AGR=?x] PP
+VP[AGR=?n] -> VP[AGR=?n]  PP 
+NP[AGR=?x] -> NP[AGR=?x] RS
+RS -> R VP[AGR=?n]
+RS -> R NP[AGR=?x] V[SUBCAT='intransitiv', AGR=?n]
+RS -> NP[AGR=?x] V[SUBCAT='transitive', AGR=?n]
+
+NP[AGR=?x] -> NP[AGR=?x] CONJ NP[AGR=?x]
+VP[AGR=?n] -> VP[AGR=?n] CONJ VP[AGR=?n]
+
+
+
+N[AGR=[FORM='egN', NUM=sg]]   -> 'Ola' | 'Kari'|'uhyret' 
+N[KJONN='hankjonn', AGR=[PERS= 'bestemt', NUM=sg]]   ->   
+N[KJONN='hankjonn', AGR=[PERS= 'bestemt', NUM=pl]]   -> 
+N[KJONN='hankjonn', AGR=[PERS= 'ubestemt', NUM=sg]]   ->'gutt'| 'bil'|'hund'| 'kontrakt' 
+N[KJONN='hankjonn', AGR=[PERS= 'ubestemt', NUM=pl]]   ->
+
+N[KJONN='hunkjonn', AGR=[PERS= 'ubestemt', NUM=pl]]   -> 
+N[KJONN='hunkjonn', AGR=[PERS= 'ubestemt', NUM=sg]]   ->'jente'
+N[KJONN='hunkjonn', AGR=[PERS= 'bestemt', NUM=sg]]   -> 'jenta'
+N[KJONN='hunkjonn', AGR=[PERS= 'bestemt', NUM=pl]]   -> 'jentene'
+N[KJONN='intetkjonn', AGR=[PERS= 'bestemt', NUM=sg]]   -> 'dyret'|'vannet' | 'huset' |'bilen'|'barnet'
+N[KJONN='intetkjonn', AGR=[PERS= 'bestemt', NUM=pl]]   -> 'bilene' | 'biler' | 'dyrene'| 'hus'
+N[KJONN='intetkjonn', AGR=[PERS= 'ubestemt', NUM=sg]]   -> 'barn' | 'dyr'
+N[KJONN='intetkjonn', AGR=[PERS= 'ubestemt', NUM=pl]]   ->
+
+
+
+
+DET[PERS='ubestemt',AGR=[NUM=sg]]   ->
+DET[PERS='bestemt',AGR=[NUM=pl]]   -> 'mange'
+DET[KJONN='intetskjonn',AGR=[PERS=bestemt, NUM=sg]]   -> 'dette' | 'det' 
+DET[KJONN='hanskjonn', AGR=[PERS=bestemt, NUM=sg]]   -> 'den'
+DET[KJONN='hanskjonn', AGR=[PERS=ubestemt, NUM=sg]]   ->  'en' |'enhver'
+DET[KJONN='hunskjonn',AGR=[PERS=ubestemt, NUM=sg]]   -> 'ei'
+DET[KJONN='intetskjonn',AGR=[PERS=ubestemt, NUM=sg]]   -> 'et'|'ethvert'
+
+V[SUBCAT='intransitiv', AGR=[TYPE='pret']]   -> 'sov' |'bet' | 'smilte'
+V[SUBCAT='transitive', AGR=[TYPE='pret']]   -> 'solgte' | 'sover' | 'smiler' | 'gir' |'kjørte'|'tok' |'liker'| 'likte' |'forteller'
+V[SUBCAT='ditransitive', AGR=[TYPE='pret']]    -> 'ga' | 'fortalte' | 'sa' |'så'| 'overrakte'
+
+
+ADJ[KJONN='hunkjonn',AGR=[PERS=ubestemt]]   ->   'snill' |'stor' | 'store' |'sterke'
+ADJ[KJONN='hankjonn',AGR=[PERS=ubestemt]]   ->   'snill' |'stor' | 'store' |'sterke'
+ADJ[KJONN='intetkjonn',AGR=[PERS=ubestemt, NUM=sg]]   -> 'stort'|'snilt'|'sterkt'| 'pent'
+
+C      -> 'at'
+P      -> 'med' | 'ved' | 'bak' | 'i' |'den' |'han'|'hun'|'ham'|'henne' |'fra'
+R      -> 'som'
+CONJ   -> 'og' | 'eller' | 'en' |'er'|'det'
+  
+   

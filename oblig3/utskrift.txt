@@ -1,0 +1,193 @@
+------------tree for cnf.cfg grammatikk----------------
+
+              S                                         
+  ____________|________                                  
+ |                     VP                               
+ |                 ____|________________________         
+ |                VP                            |       
+ |      __________|____                         |        
+ |     |               CP                       |       
+ |     |       ________|___                     |        
+ |     |      |            S                    |       
+ |     |      |    ________|____                |        
+ |     |      |   |             VP              |       
+ |     |      |   |         ____|______         |        
+ |     |      |   |        X2          |        PP      
+ |     |      |   |     ___|____       |     ___|____    
+ NP   V_S     C   NP  DTV       NP     NP   P        NP 
+ |     |      |   |    |        |      |    |        |   
+Ola fortalte  at Kari  ga     barnet dyret  i      huset
+
+       S                                                
+  _____|______                                           
+ |            VP                                        
+ |      ______|___                                       
+ |     |          CP                                    
+ |     |       ___|_____________                         
+ |     |      |                 S                       
+ |     |      |    _____________|______                  
+ |     |      |   |                    VP               
+ |     |      |   |              ______|________         
+ |     |      |   |             VP              |       
+ |     |      |   |         ____|______         |        
+ |     |      |   |        X2          |        PP      
+ |     |      |   |     ___|____       |     ___|____    
+ NP   V_S     C   NP  DTV       NP     NP   P        NP 
+ |     |      |   |    |        |      |    |        |   
+Ola fortalte  at Kari  ga     barnet dyret  i      huset
+
+       S                                                
+  _____|______                                           
+ |            VP                                        
+ |      ______|___                                       
+ |     |          CP                                    
+ |     |       ___|_____________                         
+ |     |      |                 S                       
+ |     |      |    _____________|______                  
+ |     |      |   |                    VP               
+ |     |      |   |         ___________|____             
+ |     |      |   |        |                NP          
+ |     |      |   |        |            ____|___         
+ |     |      |   |        X2          |        PP      
+ |     |      |   |     ___|____       |     ___|____    
+ NP   V_S     C   NP  DTV       NP     NP   P        NP 
+ |     |      |   |    |        |      |    |        |   
+Ola fortalte  at Kari  ga     barnet dyret  i      huset
+
+------------tree for my.cfg grammatikk----------------
+
+              S                                         
+  ____________|________                                  
+ |                     VP                               
+ |                 ____|________________________         
+ |                VP                            |       
+ |      __________|____                         |        
+ |     |               CP                       |       
+ |     |       ________|___                     |        
+ |     |      |            S                    |       
+ |     |      |    ________|____                |        
+ |     |      |   |             VP              PP      
+ |     |      |   |     ________|______      ___|____    
+ NP    |      |   NP   |        NP     NP   |        NP 
+ |     |      |   |    |        |      |    |        |   
+ PN   V_S     C   PN  DTV       ND     ND   P        ND 
+ |     |      |   |    |        |      |    |        |   
+Ola fortalte  at Kari  ga     barnet dyret  i      huset
+
+       S                                            
+  _____|______                                       
+ |            VP                                    
+ |      ______|___                                   
+ |     |          CP                                
+ |     |       ___|_________                         
+ |     |      |             S                       
+ |     |      |    _________|______                  
+ |     |      |   |                VP               
+ |     |      |   |          ______|________         
+ |     |      |   |         VP              PP      
+ |     |      |   |     ____|______      ___|____    
+ NP    |      |   NP   |    NP     NP   |        NP 
+ |     |      |   |    |    |      |    |        |   
+ PN   V_S     C   PN  DTV   ND     ND   P        ND 
+ |     |      |   |    |    |      |    |        |   
+Ola fortalte  at Kari  ga barnet dyret  i      huset
+
+       S                                            
+  _____|______                                       
+ |            VP                                    
+ |      ______|___                                   
+ |     |          CP                                
+ |     |       ___|_________                         
+ |     |      |             S                       
+ |     |      |    _________|______                  
+ |     |      |   |                VP               
+ |     |      |   |     ___________|____             
+ |     |      |   |    |    |           NP          
+ |     |      |   |    |    |       ____|___         
+ |     |      |   |    |    |      |        PP      
+ |     |      |   |    |    |      |     ___|____    
+ NP    |      |   NP   |    NP     NP   |        NP 
+ |     |      |   |    |    |      |    |        |   
+ PN   V_S     C   PN  DTV   ND     ND   P        ND 
+ |     |      |   |    |    |      |    |        |   
+Ola fortalte  at Kari  ga barnet dyret  i      huset
+
+
+
+-----------------------------------------------------
+Forskjellen mellom hva cnf.cfg og hva my.cfg genererer på denne spesifikke settningen er,
+ X2 -> DTV NP og NP -> "terminale" isteden for at NP -> PN | ND , PN -> "terminale", ND -> "terminale".
+
+ Det jeg mener er at på my.cfg ville du fått:
+
+        |
+        VP
+________|______
+|        NP     NP
+|        |      |
+DTV       ND     ND
+|        |      |
+ga     barnet dyret
+
+og i cnf.cfg blir:
+
+        |
+        VP
+         |______
+ - - - - X2     NP
+|        |      |
+DTV      NP
+|        |      |
+ga     barnet dyret
+
+
+
+-------------------------------------------------
+del 2:
+
+-------------------------------------------------
+Correctly recognized:
+Kari smiler
+Kari likte et dyr
+Ola fortalte et barn at Kari sa at ethvert dyr sov
+dyret med barnet sover i huset
+Kari ga barnet i huset dyret ved vannet
+Kari sover i huset ved vannet med dyret
+Kari fortalte at dyret i huset ved vannet sov bak huset
+ei jente smilte
+jenta kjørte en bil
+en stor gutt smilte
+hun så ham
+han så henne
+
+Should have been recognized, but wasn't:
+Kari gir et snilt stort barn et stort dyr
+den store sterke jenta smiler
+et hus er stort
+bilen er stor
+jenta er stor
+mange hus er store
+
+Correctly not recognized:
+Kari
+Kari smilte et dyr
+smilte et dyr
+Kari likte et huset
+en dyr bet et uhyret
+et dyrene sov
+huset er store
+bilen er stort
+et hus er stor
+
+Should not have been recognized, but was:
+smilte
+Kari likte
+huset ved sov
+et stor dyr sov
+barnet forteller
+ei barn sov
+det jenta smilte
+den jente smilte
+han tok bilen fra hun
+henne liker henne
+hun liker hun

@@ -1,0 +1,41 @@
+S -> NP[AGR=?x] VP[AGR=?x]
+NP[AGR=?x] -> DET[AGR=?x] Nom[AGR=?x]
+
+Nom[AGR=?x] -> N[AGR=?x]
+Nom[AGR=?x] -> ADJ N[AGR=?x]
+
+VP[AGR=?n] -> V[SUBCAT=intrans, AGR=?n] 
+VP[AGR=?n] -> V[SUBCAT=trans, AGR=?n] NP 
+VP[AGR=?n] -> V[SUBCAT=scomp, AGR=?n] CP
+
+CP -> C S
+
+V[SUBCAT=intrans, AGR=[PERS='3rd', NUM=sg]] -> 'disappears' | 'walks'
+V[SUBCAT=trans, AGR=[PERS='3rd', NUM=sg]]   -> 'sees' | 'likes' | 'serves'
+V[SUBCAT=scomp, AGR=[PERS='3rd', NUM=sg]]   -> 'says' | 'claims' 
+V[SUBCAT=intrans, AGR=[NUM=pl]]   -> 'disappear' | 'walk'
+V[SUBCAT=trans, AGR=[NUM=pl]]     -> 'see' | 'like' | 'serve'
+V[SUBCAT=scomp, AGR=[NUM=pl]]     -> 'say' | 'claim' 
+V[SUBCAT=intrans ]        -> 'disappeared' | 'walked' 
+V[SUBCAT=trans ]          -> 'saw' | 'liked' | 'served'
+V[SUBCAT=scomp]           -> 'said' | 'claimed'
+
+DET[AGR=[PERS='3rd']] -> 'the'
+DET[AGR=[PERS='3rd', NUM=sg]] -> 'a'
+DET[AGR=[PERS='3rd', NUM=pl]] -> 'many'
+
+N[AGR=[PERS='3rd', NUM=sg]] -> 'restaurant'
+N[AGR=[PERS='3rd', NUM=pl]] -> 'restaurants'
+N[AGR=[PERS='3rd', NUM=sg]] -> 'hamburger'
+N[AGR=[PERS='3rd', NUM=pl]] -> 'hamburgers'
+N[AGR=[PERS='3rd', NUM=sg]] -> 'customer'
+N[AGR=[PERS='3rd', NUM=pl]] -> 'customers'
+N[AGR=[PERS='3rd']] -> 'fish'
+
+ADJ -> 'small' | 'hot' | 'fresh'
+
+C -> 'that'
+
+
+
+
